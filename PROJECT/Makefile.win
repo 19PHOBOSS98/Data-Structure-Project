@@ -1,0 +1,55 @@
+# Project: compilation
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o practice.o magicsqr.o graph.o stackarray.o queuell.o recursion.o finalexam.o queuearr.o midterms.o
+LINKOBJ  = main.o practice.o magicsqr.o graph.o stackarray.o queuell.o recursion.o finalexam.o queuearr.o midterms.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = compilation.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+practice.o: practice.cpp
+	$(CPP) -c practice.cpp -o practice.o $(CXXFLAGS)
+
+magicsqr.o: magicsqr.cpp
+	$(CPP) -c magicsqr.cpp -o magicsqr.o $(CXXFLAGS)
+
+graph.o: graph.cpp
+	$(CPP) -c graph.cpp -o graph.o $(CXXFLAGS)
+
+stackarray.o: stackarray.cpp
+	$(CPP) -c stackarray.cpp -o stackarray.o $(CXXFLAGS)
+
+queuell.o: queuell.cpp
+	$(CPP) -c queuell.cpp -o queuell.o $(CXXFLAGS)
+
+recursion.o: recursion.cpp
+	$(CPP) -c recursion.cpp -o recursion.o $(CXXFLAGS)
+
+finalexam.o: finalexam.cpp
+	$(CPP) -c finalexam.cpp -o finalexam.o $(CXXFLAGS)
+
+queuearr.o: queuearr.cpp
+	$(CPP) -c queuearr.cpp -o queuearr.o $(CXXFLAGS)
+
+midterms.o: midterms.cpp
+	$(CPP) -c midterms.cpp -o midterms.o $(CXXFLAGS)
